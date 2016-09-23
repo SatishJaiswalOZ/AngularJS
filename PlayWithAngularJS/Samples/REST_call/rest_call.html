@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="rest-app">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product demo</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/rest_api_test.js"></script>
+</head>
+<body ng-controller="ProductController">
+<div>
+	<input type="button" ng-click="createProduct()" value="CREATE PRODUCT">
+	<input type="button" ng-click="getAllProducts()" value="GET ALL PRODUCTS">
+	<textarea ng-model="product" rows="5" cols="50">
+</div>
+
+</body>
+</html>

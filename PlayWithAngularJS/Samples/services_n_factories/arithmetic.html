@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="arithmetic_app">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<!-- <script src="js/my_services.js"></script> -->
+	<script src="js/arithmetic.js"></script>
+</head>
+<body ng-controller="ArithmeticController">
+
+<center>
+<h2>
+
+X: <input type="text" name="x" ng-model="x">
+Y: <input type="text" name="y" ng-model="y">
+
+Result: <input type="text" ng-model="result">
+<br><br>
+<button ng-click="sum()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button ng-click="subtract()">SUBTRACT</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button ng-click="multiply()">MULTIPLY</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button ng-click="divide()">DIVIDE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</h2>
+</center>
+    
+</form>
+
+</body>
+</html>

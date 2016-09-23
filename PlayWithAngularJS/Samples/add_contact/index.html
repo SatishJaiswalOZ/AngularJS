@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="js/angular.min.js"> </script>
+<script src="js/app.js"> </script>
+</head>
+<body>
+<h1>
+<div ng-controller="AccountController">
+
+<input type="text" ng-model="uname">
+<br><br>
+{{ uname }}
+<br><br>
+<ul ng-repeat="account in accounts | filter:uname | orderBy: 'lname'">
+	<li>{{ account.uname }} - {{ account.lname }}</li>
+</ul>
+
+</div>
+</h1>
+</body>
+</html>

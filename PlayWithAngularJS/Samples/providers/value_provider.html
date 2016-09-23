@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="valueProviderApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/value_provider.js"></script>
+</head>
+<body ng-controller="ValueProviderController as vpc">
+<h1>
+{{ vpc.controller_token }}
+<br>
+{{ vpc.controller_log_level }}
+</h1>
+</body>
+</html>
