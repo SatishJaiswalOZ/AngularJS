@@ -15,7 +15,6 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                 url: '/',
                 templateUrl: '/views/index',
                 controller: 'HomeCtrl'
-
             })
             .state('about', {
                 url: '/about',
@@ -28,14 +27,18 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                 templateUrl: '/views/login',
                 controller: 'LoginCtrl'
             })
+              .state('register', {
+                  url: '/register',
+                  layout: 'basic',
+                  templateUrl: '/views/register',
+                  controller: 'RegisterCtrl'
+              })
             .state('otherwise', {
                 url: '*path',
                 templateUrl: '/views/404',
                 controller: 'Error404Ctrl'
             });
-
         $locationProvider.html5Mode(true);
-
     }])
 
     // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants

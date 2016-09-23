@@ -34,6 +34,19 @@ angular.module('app.controllers', [])
         });
     }])
 
+     // Path: /Register
+    .controller('RegisterCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+        $scope.$root.title = 'Prototype Quicker App | Register';
+        // TODO: Register a user
+        $scope.login = function () {
+            $location.path('/');
+            return false;
+        };
+        $scope.$on('$viewContentLoaded', function () {
+            $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+        });
+    }])
+
     // Path: /error/404
     .controller('Error404Ctrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
         $scope.$root.title = 'Error 404: Page Not Found';
