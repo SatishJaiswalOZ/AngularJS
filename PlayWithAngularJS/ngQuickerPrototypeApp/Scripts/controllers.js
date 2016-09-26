@@ -37,8 +37,16 @@ angular.module('app.controllers', [])
      // Path: /Register
     .controller('RegisterCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
         $scope.$root.title = 'Prototype Quicker App | Register';
+        var vm = this;
+
+        vm.register = register2;
+
+        function register2()
+        {
+            $location.path('/');
+        }
         // TODO: Register a user
-        $scope.login = function () {
+        $scope.register = function () {
             $location.path('/');
             return false;
         };

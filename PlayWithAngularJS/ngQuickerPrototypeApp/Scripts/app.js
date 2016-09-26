@@ -31,7 +31,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                   url: '/register',
                   layout: 'basic',
                   templateUrl: '/views/register',
-                  controller: 'RegisterCtrl'
+                  controller: 'RegisterCtrl as vm'
               })
             .state('otherwise', {
                 url: '*path',
