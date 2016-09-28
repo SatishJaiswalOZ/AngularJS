@@ -44,7 +44,14 @@
             </nav>
         </div>
     </header>
-
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
     <div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
         @RenderBody()
     </div>
@@ -52,6 +59,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
     @Scripts.Render("~/js/app")
+    <script src="~/Scripts/flash.service.js"></script>
+    <script src="~/Scripts/user.service.local-storage.js"></script>
+    @*<script src="~/Scripts/authentication.service.js"></script>*@
     @*
         Google Analytics
         ----------------

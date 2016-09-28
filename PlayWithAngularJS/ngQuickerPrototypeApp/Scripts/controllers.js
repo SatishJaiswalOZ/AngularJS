@@ -8,6 +8,7 @@ angular.module('app.controllers', [])
     // Path: /
     .controller('HomeCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
         $scope.$root.title = 'Prototype Quicker App';
+
         $scope.$on('$viewContentLoaded', function () {
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
@@ -24,7 +25,26 @@ angular.module('app.controllers', [])
     // Path: /login
     .controller('LoginCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
         $scope.$root.title = 'Prototype Quicker App | Sign In';
-        // TODO: Authorize a user
+        var vm = this;
+        vm.login = login;
+
+        (function initController() {
+            // reset login status
+            //AuthenticationService.ClearCredentials();
+        })();
+
+        function login() {
+            vm.dataLoading = true;
+            //AuthenticationService.Login(vm.username, vm.password, function (response) {
+            //    if (response.success) {
+            //        AuthenticationService.SetCredentials(vm.username, vm.password);
+            //        $location.path('/');
+            //    } else {
+            //        FlashService.Error(response.message);
+            //        vm.dataLoading = false;
+            //    }
+            //});
+        };
         $scope.login = function () {
             $location.path('/');
             return false;
@@ -35,17 +55,25 @@ angular.module('app.controllers', [])
     }])
 
      // Path: /Register
-    .controller('RegisterCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+    .controller('RegisterCtrl', ['$scope', '$location', '$window', 'FlashService', 'UserService', function ($scope, $location, $window, FlashService, UserService) {
         $scope.$root.title = 'Prototype Quicker App | Register';
         var vm = this;
+        vm.register = register;
 
-        vm.register = register2;
-
-        function register2()
-        {
-            $location.path('/');
+        function register() {
+            vm.dataLoading = true;
+            UserService.Create(vm.user)
+                .then(function (response) {
+                    if (response.success) {
+                        FlashService.Success('Registration successful', true);
+                        $location.path('/login');
+                    } else {
+                        FlashService.Error(response.message);
+                        vm.dataLoading = false;
+                    }
+                });
         }
-        // TODO: Register a user
+
         $scope.register = function () {
             $location.path('/');
             return false;

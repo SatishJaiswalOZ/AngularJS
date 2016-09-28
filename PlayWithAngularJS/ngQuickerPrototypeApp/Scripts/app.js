@@ -14,7 +14,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
             .state('home', {
                 url: '/',
                 templateUrl: '/views/index',
-                controller: 'HomeCtrl'
+                controller: 'HomeCtrl as vm'
             })
             .state('about', {
                 url: '/about',
@@ -25,7 +25,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                 url: '/login',
                 layout: 'basic',
                 templateUrl: '/views/login',
-                controller: 'LoginCtrl'
+                controller: 'LoginCtrl as vm2'
             })
               .state('register', {
                   url: '/register',
