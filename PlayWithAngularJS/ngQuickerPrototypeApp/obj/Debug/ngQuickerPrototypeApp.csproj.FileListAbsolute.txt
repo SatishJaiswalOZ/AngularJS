@@ -112,4 +112,3 @@ D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.WebPages.Dep
 D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.WebPages.Razor.xml
 D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\obj\Debug\App.Web1.dll
 D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\obj\Debug\App.Web1.pdb
-D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\obj\Debug\ngQuickerPrototypeApp.csprojResolveAssemblyReference.cache
