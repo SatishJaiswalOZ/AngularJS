@@ -1,15 +1,10 @@
 ﻿'use strict';
 
-// Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
-angular.module('app', ['ngCookies','ui.router', 'app.filters', 'app.services', 'app.directives', 'app.controllers'])
+angular.module('app', ['ngCookies', 'ui.router', 'app.filters', 'app.services', 'app.directives', 'app.controllers'])
 
     // Gets executed during the provider registrations and configuration phase. Only providers and constants can be
     // injected here. This is to prevent accidental instantiation of services before they have been fully configured.
     .config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
-
-        // UI States, URL Routing & Mapping. For more info see: https://github.com/angular-ui/ui-router
-        // ------------------------------------------------------------------------------------------------------------
-
         $stateProvider
             .state('home', {
                 url: '/',
@@ -45,34 +40,34 @@ angular.module('app', ['ngCookies','ui.router', 'app.filters', 'app.services', '
     // can be injected here. This is to prevent further system configuration during application run time.
         .run(['$templateCache', '$rootScope', '$state', '$stateParams', '$cookieStore', function ($templateCache, $rootScope, $state, $stateParams, $cookieStore) {
 
-        // <ui-view> contains a pre-rendered template for the current view
-        // caching it will prevent a round-trip to a server at the first page load
-        var view = angular.element('#ui-view');
-        $templateCache.put(view.data('tmpl-url'), view.html());
+            // <ui-view> contains a pre-rendered template for the current view
+            // caching it will prevent a round-trip to a server at the first page load
+            var view = angular.element('#ui-view');
+            $templateCache.put(view.data('tmpl-url'), view.html());
 
-        // Allows to retrieve UI Router state information from inside templates
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
+            // Allows to retrieve UI Router state information from inside templates
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
 
-        $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+            $rootScope.$on('$stateChangeSuccess', function (event, toState) {
 
-            // Sets the layout name, which can be used to display different layouts (header, footer etc.)
-            // based on which page the user is located
-            $rootScope.layout = toState.layout;
-        });
+                // Sets the layout name, which can be used to display different layouts (header, footer etc.)
+                // based on which page the user is located
+                $rootScope.layout = toState.layout;
+            });
 
-        //// keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-        }
-
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
-            var loggedIn = $rootScope.globals.currentUser;
-            if (restrictedPage && !loggedIn) {
-                $location.path('/login');
+            //// keep user logged in after page refresh
+            $rootScope.globals = $cookieStore.get('globals') || {};
+            if ($rootScope.globals.currentUser) {
+                $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
             }
-        });
-    }]);
+
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                // redirect to login page if not logged in and trying to access a restricted page
+                var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+                var loggedIn = $rootScope.globals.currentUser;
+                if (restrictedPage && !loggedIn) {
+                    $location.path('/login');
+                }
+            });
+        }]);

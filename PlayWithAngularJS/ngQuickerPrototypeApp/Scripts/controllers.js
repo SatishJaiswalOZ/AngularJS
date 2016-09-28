@@ -55,27 +55,27 @@ angular.module('app.controllers', [])
     }])
 
     // Path: /login
-    .controller('LoginCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+    .controller('LoginCtrl', ['$scope', '$location', '$window', 'AuthenticationService', 'FlashService', function ($scope, $location, $window, AuthenticationService, FlashService) {
         $scope.$root.title = 'Prototype Quicker App | Sign In';
         var vm = this;
         vm.login = login;
 
         (function initController() {
             // reset login status
-            //AuthenticationService.ClearCredentials();
+            AuthenticationService.ClearCredentials();
         })();
 
         function login() {
             vm.dataLoading = true;
-            //AuthenticationService.Login(vm.username, vm.password, function (response) {
-            //    if (response.success) {
-            //        AuthenticationService.SetCredentials(vm.username, vm.password);
-            //        $location.path('/');
-            //    } else {
-            //        FlashService.Error(response.message);
-            //        vm.dataLoading = false;
-            //    }
-            //});
+            AuthenticationService.Login(vm.username, vm.password, function (response) {
+                if (response.success) {
+                    AuthenticationService.SetCredentials(vm.username, vm.password);
+                    $location.path('/');
+                } else {
+                    FlashService.Error(response.message);
+                    vm.dataLoading = false;
+                }
+            });
         };
         $scope.login = function () {
             $location.path('/');
