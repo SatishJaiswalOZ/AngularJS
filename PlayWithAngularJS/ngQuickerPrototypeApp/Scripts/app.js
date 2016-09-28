@@ -30,15 +30,15 @@ angular.module('app', ['ngCookies', 'ui.router', 'app.filters', 'app.services', 
               })
             .state('otherwise', {
                 url: '*path',
-                templateUrl: '/views/404',
-                controller: 'Error404Ctrl'
+                templateUrl: '/views/index',
+                controller: 'HomeCtrl as vm'
             });
         $locationProvider.html5Mode(true);
     }])
 
     // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants
     // can be injected here. This is to prevent further system configuration during application run time.
-        .run(['$templateCache', '$rootScope', '$state', '$stateParams', '$cookieStore', function ($templateCache, $rootScope, $state, $stateParams, $cookieStore) {
+        .run(['$templateCache', '$rootScope', '$state', '$stateParams', '$cookieStore', '$location', function ($templateCache, $rootScope, $state, $stateParams, $cookieStore, $location) {
 
             // <ui-view> contains a pre-rendered template for the current view
             // caching it will prevent a round-trip to a server at the first page load
