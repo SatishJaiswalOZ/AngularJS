@@ -20,7 +20,7 @@ angular.module('app', ['ngCookies', 'ui.router', 'app.filters', 'app.services', 
                 url: '/login',
                 layout: 'basic',
                 templateUrl: '/views/login',
-                controller: 'LoginCtrl as vm2'
+                controller: 'LoginCtrl as vm'
             })
               .state('register', {
                   url: '/register',
