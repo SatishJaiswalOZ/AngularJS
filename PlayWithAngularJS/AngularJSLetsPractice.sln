@@ -24,7 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularJSXorAssignment1", "
 		SlnRelativePath = "Samples\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngQuickerPrototypeApp", "ngQuickerPrototypeApp\ngQuickerPrototypeApp.csproj", "{8920E0C0-ACF4-4D3F-8A8B-2D01C344D85D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanWebApp", "ngQuickerPrototypeApp\LoanWebApp.csproj", "{8920E0C0-ACF4-4D3F-8A8B-2D01C344D85D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

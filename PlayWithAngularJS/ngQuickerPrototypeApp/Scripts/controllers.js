@@ -2,7 +2,7 @@
 angular.module('app.controllers', [])
 
     // Path: /
-    .controller('HomeCtrl', ['$rootScope','$scope', '$location', '$window', 'UserService', function ($rootScope,$scope, $location, $window, UserService) {
+    .controller('HomeCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService', function ($rootScope, $scope, $location, $window, UserService) {
         $scope.$root.title = 'Prototype Quicker App';
         var vm = this;
 
@@ -20,7 +20,7 @@ angular.module('app.controllers', [])
         function loadCurrentUser() {
             UserService.GetByUsername($rootScope.globals.currentUser.username)
                 .then(function (user) {
-                    vm.user = user;
+                    vm.user = user
                 });
         }
 
@@ -102,3 +102,19 @@ angular.module('app.controllers', [])
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
     }])
+
+.filter('capitalize', function () {
+    return function (input, scope) {
+        if (input != null)
+            input = input.toLowerCase();
+        return input.substring(0, 1).toUpperCase() + input.substring(1);
+    }
+})
+
+.directive('addLoan', function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        template: '<a href="http://google.com">Click me to go to Google</a>'
+    }
+})
