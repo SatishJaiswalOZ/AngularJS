@@ -74,3 +74,4 @@ C:\GitRepos\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.Web
 C:\GitRepos\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.WebPages.Razor.xml
 C:\GitRepos\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\obj\Debug\App.Web1.dll
 C:\GitRepos\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\obj\Debug\App.Web1.pdb
+C:\GitRepos\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\obj\Debug\LoanWebApp.csprojResolveAssemblyReference.cache

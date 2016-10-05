@@ -43,7 +43,7 @@ angular.module('app', ['ngCookies', 'ui.router', 'app.filters', 'app.services', 
 
     // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants
     // can be injected here. This is to prevent further system configuration during application run time.
-        .run(['$templateCache', '$rootScope', '$state', '$stateParams', '$cookieStore', '$location', function ($templateCache, $rootScope, $state, $stateParams, $cookieStore, $location) {
+        .run(['$templateCache', '$rootScope', '$state', '$stateParams', '$cookieStore', '$location', '$http', function ($templateCache, $rootScope, $state, $stateParams, $cookieStore, $location, $http) {
 
             // <ui-view> contains a pre-rendered template for the current view
             // caching it will prevent a round-trip to a server at the first page load

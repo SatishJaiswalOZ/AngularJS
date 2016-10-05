@@ -2,7 +2,7 @@
 angular.module('app.controllers', [])
 
     // Path: /
-    .controller('HomeCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService', function ($rootScope, $scope, $location, $window, UserService) {
+    .controller('HomeCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService','fileUpload', function ($rootScope, $scope, $location, $window, UserService) {
         $scope.$root.title = 'Loan Analytics App';
         var vm = this;
 
@@ -37,6 +37,15 @@ angular.module('app.controllers', [])
                 loadAllUsers();
             });
         }
+
+        $scope.uploadFile = function () {
+            var file = $scope.myFile;
+            console.log('file is ');
+            console.dir(file);
+            var uploadUrl = "/fileUpload";
+            fileUpload.uploadFileToUrl(file, uploadUrl);
+        };
+
         $scope.$on('$viewContentLoaded', function () {
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });

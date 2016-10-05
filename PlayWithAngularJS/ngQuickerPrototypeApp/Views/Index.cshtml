@@ -2,4 +2,7 @@
     PageData["title"] = "Loan Analytics App";
 }
 <h4>Welcome {{vm.user.firstName | capitalize}}!</h4>
-<add-loan></add-loan>
+
+<h3>New Loan:</h3>
+<input type="file" file-model="myFile" />
+<button class="checkbox" ng-click="uploadFile()">upload me</button>
