@@ -16,6 +16,11 @@ angular.module('app', ['ngCookies', 'ui.router', 'app.filters', 'app.services', 
                 templateUrl: '/views/about',
                 controller: 'AboutCtrl'
             })
+            .state('contacts', {
+                url: '/contacts',
+                templateUrl: '/views/contacts',
+                controller: 'ContactsCtrl'
+            })
             .state('login', {
                 url: '/login',
                 layout: 'basic',

@@ -1,9 +1,10 @@
 ﻿'use strict';
 
 angular.module('app.directives', [])
-
-    .directive('appVersion', ['version', function (version) {
-        return function (scope, elm, attrs) {
-            elm.text(version);
-        };
-    }]);
+  .directive('addLoan', function () {
+      return {
+          restrict: 'E',
+          replace: true,
+          template: '<a href="http://google.com">Click me to go to Google</a>'
+      }
+  })

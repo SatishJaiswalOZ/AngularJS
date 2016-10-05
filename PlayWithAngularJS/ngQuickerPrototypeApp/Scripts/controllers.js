@@ -3,7 +3,7 @@ angular.module('app.controllers', [])
 
     // Path: /
     .controller('HomeCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService', function ($rootScope, $scope, $location, $window, UserService) {
-        $scope.$root.title = 'Prototype Quicker App';
+        $scope.$root.title = 'Loan Analytics App';
         var vm = this;
 
         vm.user = null;
@@ -44,7 +44,7 @@ angular.module('app.controllers', [])
 
     // Path: /login
     .controller('LoginCtrl', ['$scope', '$location', '$window', 'AuthenticationService', 'FlashService', function ($scope, $location, $window, AuthenticationService, FlashService) {
-        $scope.$root.title = 'Prototype Quicker App | Sign In';
+        $scope.$root.title = 'Loan Analytics App | Sign In';
         var vm = this;
         vm.login = login;
 
@@ -76,7 +76,7 @@ angular.module('app.controllers', [])
 
      // Path: /Register
     .controller('RegisterCtrl', ['$scope', '$location', '$window', 'FlashService', 'UserService', function ($scope, $location, $window, FlashService, UserService) {
-        $scope.$root.title = 'Prototype Quicker App | Register';
+        $scope.$root.title = 'Loan Analytics App | Register';
         var vm = this;
         vm.register = register;
 
@@ -103,18 +103,3 @@ angular.module('app.controllers', [])
         });
     }])
 
-.filter('capitalize', function () {
-    return function (input, scope) {
-        if (input != null)
-            input = input.toLowerCase();
-        return input.substring(0, 1).toUpperCase() + input.substring(1);
-    }
-})
-
-.directive('addLoan', function () {
-    return {
-        restrict: 'E',
-        replace: true,
-        template: '<a href="http://google.com">Click me to go to Google</a>'
-    }
-})

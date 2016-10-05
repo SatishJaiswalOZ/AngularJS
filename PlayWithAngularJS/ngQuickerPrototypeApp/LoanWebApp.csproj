@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -133,7 +134,6 @@
     </Content>
     <Content Include="Content\app.less" />
     <Content Include="Content\variables.less" />
-    <Content Include="Scripts\customLoanDirectives.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\authentication.service.js" />
     <Content Include="Scripts\controllers.js" />
@@ -499,6 +499,7 @@
     <Content Include="Views\_PageStart.cshtml" />
     <Content Include="Views\About.cshtml" />
     <Content Include="Views\Register.cshtml" />
+    <Content Include="Views\Contacts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
