@@ -2,7 +2,7 @@
 angular.module('app.controllers', [])
 
     // Path: /
-    .controller('HomeCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService','fileUpload', function ($rootScope, $scope, $location, $window, UserService) {
+    .controller('HomeCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService', 'fileUpload', function ($rootScope, $scope, $location, $window, UserService, fileUpload) {
         $scope.$root.title = 'Loan Analytics App';
         var vm = this;
 
