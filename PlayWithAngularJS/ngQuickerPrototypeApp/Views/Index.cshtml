@@ -1,8 +1,61 @@
 ﻿@{
     PageData["title"] = "Loan Analytics App";
 }
-    <h4>Welcome {{vm.user.firstName | capitalize}}!</h4>
+<h4 style="float: right">Welcome {{vm.user.firstName | capitalize}}!</h4>
 
-    <h3>New Loan:</h3>
-    <input type="file" file-model="myFile" />
-    <button class="checkbox" ng-click="uploadFile()">upload me</button>
+<h3>New Loan:</h3>
+<div style="margin-left: 130px; margin-top: -35px;">
+    <input type="file" file-model="myFile" style="float: left"/>
+    <button style=" margin-left: 300px; " class="checkbox" ng-click="uploadFile()" >Upload for analytics</button>
+</div>
+<div class="panel" ng-app="adaptv.adaptStrapDocs" ng-controller="tableliteCtrl">
+
+    <!-- ========== template files ========== -->
+    <script type="text/ng-template" id="src/tablelite/docs/buyCell.html">
+        <button class="btn btn-primary btn-xs" ng-click="buyCar(item)">Analyze</button>
+    </script>
+
+    <script type="text/ng-template" id="src/tablelite/docs/carMoreInfo.html">
+        <div>
+            <h4>More Info</h4>
+            <p><strong>Loan type: </strong>{{ item.name }}</p>
+            <p><strong>Year: </strong>{{ item.year }}</p>
+            <p><strong>Amount: </strong>{{ item.year }}</p>
+            <p><a ng-click="buyCar(item)">Click here</a> to apply.</p>
+        </div>
+    </script>
+
+    <p class="text-muted">
+        Loan Selected: <span class="badge" ng-bind="models.selectedCars.length"></span>
+        &nbsp;&nbsp;&nbsp;&nbsp;Search: <input type="text" placeholder=" enter search text " ng-model="models.searchText" />
+    </p>
+
+    <!-- ========== Usage ========== -->
+    <ad-table-lite table-name="carsForSale"
+                   enable-column-search="true"
+                   column-definition="carsTableColumnDefinition"
+                   local-data-source="models.carsForSale"
+                   page-sizes="[7, 20]"
+                   pagination-btn-group-classes="pagination pagination-sm"
+                   table-classes="table table-bordered"
+                   items-not-found-message="Loan Not Found"
+                   selected-items="models.selectedCars"
+                   snug-sort-icons="true"
+                   search-text="models.searchText"
+                   state="models.state"
+                   on-state-change="onStateChange"
+                   row-class-provider="checkRowSelected"
+                   row-expand-template="src/tablelite/docs/carMoreInfo.html"
+                   row-expand-callback="rowExpanded">
+    </ad-table-lite>
+
+    <h3 class="text-muted">Selected Items:</h3>
+    <div class="well">
+        <span>{{ models.selectedCars }}</span>
+    </div>
+
+    <h3 class="text-muted">Drag Data Change Log:</h3>
+    <div class="well">
+        <span>{{ models.changeInfo }}</span>
+    </div>
+</div>

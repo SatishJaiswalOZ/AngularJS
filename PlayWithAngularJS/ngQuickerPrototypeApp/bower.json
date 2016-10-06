@@ -1,0 +1,16 @@
+{
+  "name": "App.Web1",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Scripts/lib"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "adapt-strap": "~2.6.1"
+  }
+}
