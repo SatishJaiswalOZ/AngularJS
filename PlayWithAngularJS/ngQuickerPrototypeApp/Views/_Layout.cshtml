@@ -37,19 +37,21 @@
             </nav>
         </div>
     </header>
-    <div class="jumbotron" ng-if="layout ">
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h2 class="text-center">Loan Analytics User Authentication</h2>
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-                <div ng-view></div>
+    <div class="watermark">
+        <div class="jumbotron" ng-if="layout ">
+            <div class="container">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <h2 class="text-center">Loan Analytics User Authentication</h2>
+                    <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                    <div ng-view></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
-        @RenderBody()
-    </div>
 
+        <div id="ui-view" class="container " ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
+            @RenderBody()
+        </div>
+    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
     <script src="~/Scripts/vendor/angular-cookies.js"></script>

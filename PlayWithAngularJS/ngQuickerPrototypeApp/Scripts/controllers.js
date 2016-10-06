@@ -84,7 +84,8 @@ angular.module('app.controllers', [])
     }])
 
      // Path: /Register
-    .controller('RegisterCtrl', ['$scope', '$location', '$window', 'FlashService', 'UserService', function ($scope, $location, $window, FlashService, UserService) {
+    .controller('RegisterCtrl', ['$scope', '$location', '$window', 'FlashService', 'UserService',
+        function ($scope, $location, $window, FlashService, UserService) {
         $scope.$root.title = 'Loan Analytics App | Register';
         var vm = this;
         vm.register = register;
