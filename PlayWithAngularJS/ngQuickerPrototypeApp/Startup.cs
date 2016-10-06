@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-[assembly: Microsoft.Owin.OwinStartup("LoanWebApp",typeof(App.Web1.Startup))]
+[assembly: Microsoft.Owin.OwinStartup("LoanWebApp", typeof(App.Web1.Startup))]
 
 namespace App.Web1
 {
@@ -22,13 +22,14 @@ namespace App.Web1
 
             this.ConfigureAuth(app);
 
-            //using (WebApp.Start<LoanSvc.SelfHost>("http://localhost:9000/"))
-            //{
-            //    // Create HttpCient and make a request to api/values 
-            //    HttpClient client = new HttpClient();
+            using (WebApp.Start<LoanSvc.SelfHost>("http://localhost:9000/"))
+            {
+                // Create HttpCient and make a request to api/values 
+                HttpClient client = new HttpClient();
 
-            //    var response = client.GetAsync("http://localhost:9000/" + "api/values").Result;
-            //}
+                var response = client.GetAsync("http://localhost:9000/" + "api/values").Result;
+                var result = response.Content.ReadAsStringAsync().Result;
+            }
         }
     }
 }
