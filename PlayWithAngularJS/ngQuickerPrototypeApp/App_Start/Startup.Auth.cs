@@ -10,6 +10,8 @@ namespace App.Web1
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
     using Owin;
+    using Microsoft.Owin.Hosting;
+    using System;
 
     public partial class Startup
     {
