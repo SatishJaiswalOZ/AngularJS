@@ -5,15 +5,15 @@
 angular.module('app.services', [])
   .service('fileUpload', ['$http', function ($http) {
       this.uploadFileToUrl = function (file, uploadUrl) {
-          var fd = new FormData();
-          fd.append('file', file);
-          $http.post(uploadUrl, fd, {
-              transformRequest: angular.identity,
-              headers: { 'Content-Type': undefined }
+          $http({
+              method: 'POST',
+              url:uploadUrl,
+              data: { file: file },
+              headers: { "Content-Type": "application/xml" }
           })
           .success(function () {
           })
-          .error(function () {
+          .error(function (error) {
           });
       }
   }]);

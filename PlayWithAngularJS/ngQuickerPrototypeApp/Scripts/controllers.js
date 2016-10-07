@@ -42,7 +42,7 @@ angular.module('app.controllers', [])
             var file = $scope.myFile;
             console.log('file is ');
             console.dir(file);
-            var uploadUrl = "/fileUpload";
+            var uploadUrl = "http://localhost:9000/api/loan/uploadFile";
             fileUpload.uploadFileToUrl(file, uploadUrl);
         };
 
