@@ -8,8 +8,8 @@ angular.module('app.services', [])
           $http({
               method: 'POST',
               url:uploadUrl,
-              data: { file: file },
-              headers: { "Content-Type": "application/xml" }
+              data:file ,
+              headers: { "Content-Type": 'application/xml' }
           })
           .success(function () {
           })
