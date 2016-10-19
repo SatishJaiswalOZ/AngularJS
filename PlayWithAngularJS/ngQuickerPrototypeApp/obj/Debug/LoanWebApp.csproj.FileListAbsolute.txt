@@ -144,3 +144,5 @@ D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.Http.Owin.xm
 D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.Mvc.xml
 D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\EntityFramework.xml
 D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\System.Web.Http.WebHost.xml
+D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\EntityFramework.SqlServer.dll
+D:\AngularJS\PlayWithAngularJS\ngQuickerPrototypeApp\bin\EntityFramework.SqlServer.xml

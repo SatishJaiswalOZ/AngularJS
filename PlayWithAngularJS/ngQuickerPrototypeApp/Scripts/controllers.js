@@ -214,7 +214,7 @@ angular.module('adaptv.adaptStrapDocs', [
 
     $scope.carsTableColumnDefinition = [
       {
-          columnHeaderDisplayName: 'Loan Name',
+          columnHeaderDisplayName: 'Loan Number',
           displayProperty: 'name',
           sortKey: 'name',
           columnSearchProperty: 'name',
